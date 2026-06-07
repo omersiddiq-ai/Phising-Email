@@ -1,0 +1,96 @@
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background: #f4f5f7;
+  color: #1f2937;
+}
+
+header {
+  padding: 24px;
+  background: #111827;
+  color: #ffffff;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 8px 0 0;
+  color: #d1d5db;
+}
+
+.table-container {
+  padding: 24px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.08);
+}
+
+th,
+td {
+  text-align: left;
+  padding: 16px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+th {
+  background: #f9fafb;
+  color: #111827;
+}
+
+.empty {
+  text-align: center;
+  color: #6b7280;
+}
+
+.status {
+  padding: 16px 24px;
+  color: #111827;
+}
+
+.alert-popup {
+  position: fixed;
+  top: 24px;
+  right: 24px;
+  width: 320px;
+  border: 1px solid #d97706;
+  background: #fff7ed;
+  color: #92400e;
+  border-radius: 12px;
+  box-shadow: 0 16px 32px rgba(15, 23, 42, 0.16);
+  padding: 16px;
+  z-index: 1000;
+}
+
+.alert-popup.hidden {
+  display: none;
+}
+
+.popup-inner {
+  display: grid;
+  gap: 12px;
+}
+
+.popup-inner strong {
+  display: block;
+  font-size: 1rem;
+}
+
+.popup-inner button {
+  border: none;
+  background: #f97316;
+  color: white;
+  border-radius: 6px;
+  padding: 10px 14px;
+  cursor: pointer;
+}
+
+.popup-inner button:hover {
+  background: #ea580c;
+}

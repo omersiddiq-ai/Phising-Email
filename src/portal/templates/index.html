@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Phishing Detector Portal</title>
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <h1>Phishing Detector Portal</h1>
+      <p>Running list of detected phishing threats from your Gmail inbox.</p>
+    </header>
+
+    <section id="status" class="status">Loading alert list…</section>
+
+    <section class="table-container">
+      <table id="alerts-table">
+        <thead>
+          <tr>
+            <th>Sender</th>
+            <th>Subject</th>
+            <th>Detected At</th>
+            <th>Reason</th>
+          </tr>
+        </thead>
+        <tbody id="alerts-body">
+          <tr><td colspan="4" class="empty">No phishing threats have been detected yet.</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <div id="alert-popup" class="alert-popup hidden">
+      <div class="popup-inner">
+        <strong>New phishing alert</strong>
+        <p id="popup-sender"></p>
+        <p id="popup-subject"></p>
+        <button id="popup-close">Dismiss</button>
+      </div>
+    </div>
+
+    <script src="/static/app.js"></script>
+  </body>
+</html>
