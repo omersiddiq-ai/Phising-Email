@@ -1,0 +1,11 @@
+[build-system]
+requires = ["setuptools>=45", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "phishing-detector-agent"
+version = "0.1.0"
+description = "Gmail phishing detector agent with Flask portal"
+
+[tool.vercel]
+entrypoint = "src/portal/app.py"
