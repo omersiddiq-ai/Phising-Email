@@ -8,4 +8,4 @@ version = "0.1.0"
 description = "Gmail phishing detector agent with Flask portal"
 
 [tool.vercel]
-entrypoint = "src/portal/app.py"
+entrypoint = "src.portal.app:app"
