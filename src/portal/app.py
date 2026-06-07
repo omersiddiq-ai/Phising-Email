@@ -1,4 +1,5 @@
 import logging
+import os
 from datetime import datetime
 from pathlib import Path
 
@@ -14,7 +15,10 @@ def _resolve_storage_path(storage_path: str = None) -> str:
     if storage_path:
         return storage_path
     project_root = Path(__file__).resolve().parents[2]
-    return str(project_root / "data" / "threats.json")
+    data_dir = project_root / "data"
+    # Create data directory if it doesn't exist
+    data_dir.mkdir(parents=True, exist_ok=True)
+    return str(data_dir / "threats.json")
 
 
 def _parse_iso_timestamp(timestamp: str) -> datetime:
@@ -74,4 +78,7 @@ def create_app(storage_path: str = None) -> Flask:
 app = create_app()
 
 if __name__ == "__main__":
-    app.run(host="127.0.0.1", port=5000)
+    # Use PORT env var from Vercel; fallback to 5000 for local dev
+    port = int(os.environ.get("PORT", 5000))
+    host = "0.0.0.0" if os.environ.get("VERCEL") else "127.0.0.1"
+    app.run(host=host, port=port)
